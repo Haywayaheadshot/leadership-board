@@ -1,0 +1,126 @@
+@import '_var';
+
+@font-face {
+  font-family: $font-family;
+  src:
+    url(./font/my-font.woff2) format("woff2"),
+    url(./font/my-font.woff) format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+.font {
+  font-style: $font-style;
+}
+
+.app-header {
+  font-size: $font-size -  6;
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3vw;
+}
+
+.add-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: grid;
+  gap: 8px;
+}
+
+.add-button-div {
+  display: flex;
+  justify-content: flex-end;
+
+  .submit-score {
+    border: 2px solid $black;
+    box-shadow: 5px 5px 5px $black;
+  }
+}
+
+.score-keeper {
+  display: grid;
+}
+
+.score-keeper-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 3vw;
+}
+
+.refresh-button {
+  margin: 20px 0;
+  border: 2px solid $black;
+  box-shadow: 5px 5px 5px $black;
+}
+
+.score-board-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 3px solid $black;
+}
+
+.score-board-li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0 3vw;
+}
+
+.score-board-li:nth-child(odd) {
+  background-color: $light-grey;
+}
+
+.score-board-score {
+  margin-left: 10px;
+}
+
+.error-message {
+  display: none;
+  background-color: $test-color;
+  font-size: 18px;
+  padding: 0 10px;
+  text-align: center;
+  color: $light-grey;
+  font-weight: $font-weight - 500;
+}
+
+@media screen and (min-width: 768px) {
+  .app-header {
+    font-size: $font-size - 4;
+    text-align: left;
+    padding-left: 4vw;
+  }
+
+  .main-content {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 10vw;
+    padding-left: 10vw;
+  }
+
+  .score-keeper {
+    min-width: 35vw;
+  }
+
+  .refresh-button {
+    height: 30px;
+    margin: 20px 0;
+    border: 2px solid $black;
+    box-shadow: 5px 5px 5px $black;
+  }
+
+  .form {
+    min-width: 15vw;
+  }
+}
