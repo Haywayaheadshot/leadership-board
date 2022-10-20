@@ -1,6 +1,6 @@
 # LeaderBoard
 
-> This is an app that keeps scores inputted by user.
+> This is an app that keeps scores inputted by user by storing the user and score in an api. And fetches list of all information stored by users of the app under one ID of the api.
 
 
 ## Built With
@@ -10,7 +10,7 @@
 - Sass
 - Javascript
 - Webpack
-
+- Api
 
 ## Getting Started
 
