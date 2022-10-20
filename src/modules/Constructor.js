@@ -9,7 +9,6 @@ export default class AddScores {
     let scores = [];
     if (localStorage.getItem('scores')) {
       dataStored = localStorage.getItem('scores');
-      // console.log(dataStored);
       scores = JSON.parse(dataStored);
     }
     return scores;
