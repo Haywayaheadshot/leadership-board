@@ -1,7 +1,7 @@
 @import '_var';
 
 @font-face {
-  font-family: $font-family;
+  font-family: "fontAwesome";
   src:
     url(./font/my-font.woff2) format("woff2"),
     url(./font/my-font.woff) format("woff");
@@ -9,7 +9,12 @@
   font-style: normal;
 }
 
+body {
+  // background-image: linear-gradient(bottom, rgb(254, 133, 107) 24%, rgb(35, 171, 17) 62%);
+}
+
 .font {
+  font-family: $font-family;
   font-style: $font-style;
 }
 
@@ -17,6 +22,21 @@
   font-size: $font-size -  6;
   margin-top: 5vh;
   text-align: center;
+  color: $white;
+}
+
+.add-score-text,
+.recent-scores-text {
+  color: $white;
+  font-weight: $font-weight - 700;
+}
+
+.add-score-text {
+  font-size: $font-size - 8;
+}
+
+.recent-scores-text {
+  font-size: $font-size - 8.5;
 }
 
 .main-content {
@@ -41,8 +61,23 @@
   justify-content: flex-end;
 
   .submit-score {
+    border: 1px solid $blue;
+    box-shadow: 5px 5px 5px $black;
+    border-radius: 20px;
+  }
+
+  .submit-score:hover {
+    background-color: $red;
+    border: 2px solid $black;
+    box-shadow: 5px 5px 5px $white;
+    color: $white;
+  }
+
+  .submit-score:active {
+    background-color: $red;
     border: 2px solid $black;
     box-shadow: 5px 5px 5px $black;
+    color: $white;
   }
 }
 
@@ -61,13 +96,29 @@
   margin: 20px 0;
   border: 2px solid $black;
   box-shadow: 5px 5px 5px $black;
+  border-radius: 20px;
+}
+
+.refresh-button:hover {
+  background-color: $red;
+  border: 2px solid $black;
+  box-shadow: 5px 5px 5px $white;
+  color: $white;
+}
+
+.refresh-button:active {
+  background-color: $red;
+  border: 2px solid $black;
+  box-shadow: 5px 5px 5px $black;
+  color: $white;
 }
 
 .score-board-ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  border: 3px solid $black;
+  border: 3px solid $white;
+  box-shadow: 0 0 30px $black;
 }
 
 .score-board-li {
@@ -75,10 +126,18 @@
   flex-direction: row;
   justify-content: flex-start;
   padding: 0 3vw;
+  font-weight: $font-weight - 700;
+  font-size: $font-size - 8.5;
+  color: $black;
 }
 
 .score-board-li:nth-child(odd) {
   background-color: $light-grey;
+  color: $red;
+}
+
+.score-board-li:nth-child(even) {
+  color: $white;
 }
 
 .score-board-score {
@@ -93,6 +152,10 @@
   text-align: center;
   color: $light-grey;
   font-weight: $font-weight - 500;
+}
+
+.value-inputs::placeholder {
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -115,12 +178,32 @@
 
   .refresh-button {
     height: 30px;
-    margin: 20px 0;
+    margin: 40px 0;
     border: 2px solid $black;
     box-shadow: 5px 5px 5px $black;
   }
 
   .form {
     min-width: 15vw;
+  }
+
+  .add-score-text {
+    font-size: $font-size - 5;
+  }
+
+  .recent-scores-text {
+    font-size: $font-size - 8;
+  }
+
+  .value-inputs {
+    min-width: 30vw;
+    min-height: 5vh;
+    font-size: $font-size - 9;
+    font-weight: $font-weight - 200;
+    padding-left: 2vw;
+  }
+
+  .value-inputs::placeholder {
+    text-align: center;
   }
 }

@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="A simple, Leadership board that keeps scores.">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A simple, Leadership board that keeps scores."
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leadership Board</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="app-header font">Leaderboard</header>
     <main class="main-content">
-        <section class="add-score">
-            <h2 class="font">Add your score</h2>
-            <p class="error-message font">Please enter a valid name and score. Scores must be just number</p>
-            <form class="form">
-                <label for="name"></label>
-                <input class="font" type="text" name="name" id="name" placeholder="Your name">
-                <label for="score"></label>
-                <input class="font" type="number" name="score" id="score" placeholder="Your score">
-                <div class="add-button-div">
-                    <button class="submit-score font" type="submit">Submit</button>
-                </div>
-            </form>
+      <section class="add-score">
+        <h2 class="add-score-text font">Add your score</h2>
+        <p class="error-message font">
+          Please enter a valid name and score. Scores must be just number
+        </p>
+        <form class="form">
+          <label for="name"></label>
+          <input
+            class="value-inputs font"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Your name"
+          />
+          <label for="score"></label>
+          <input
+            class="value-inputs font"
+            type="number"
+            name="score"
+            id="score"
+            placeholder="Your score"
+          />
+          <div class="add-button-div">
+            <button class="submit-score font" type="submit">Submit</button>
+          </div>
+        </form>
+      </section>
+      <section class="score-keeper">
+        <div class="score-keeper-header">
+          <h3 class="recent-scores-text font">Recent scores</h3>
+          <button class="refresh-button font" type="button">Refresh</button>
+        </div>
+        <section>
+          <ul class="score-board-ul"></ul>
         </section>
-        <section class="score-keeper">
-            <div class="score-keeper-header">
-                <h3 class="font">Recent scores</h3>
-                <button class="refresh-button font" type="button">Refresh</button>
-            </div>
-            <section>
-                <ul class="score-board-ul"></ul>
-            </section>
-        </section>
+      </section>
     </main>
-</body>
+  </body>
 </html>

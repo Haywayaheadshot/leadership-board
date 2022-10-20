@@ -28,6 +28,9 @@ To see live demo, click [here](https://haywayaheadshot.github.io/leadership-boar
 
 ### Setup
 - To clone the repository run this command - " git clone https://github.com/Haywayaheadshot/leadership-board.git "
+- cd leadership-board
+- npm install
+- npm start
 
 ## Author
 
