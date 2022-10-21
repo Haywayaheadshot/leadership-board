@@ -13,8 +13,8 @@ const createScore = async () => {
   newScoreLi.className = 'score-board-li';
   scoreBoard.appendChild(newScoreLi);
   newScoreLi.innerHTML = `
-    <p class="score-board-name">${newScoresInput.name}:</p>
-    <p class="score-board-score">${newScoresInput.score}</p>
+    <p class="score-board-name font">${newScoresInput.name}:</p>
+    <p class="score-board-score font">${newScoresInput.score}</p>
     `;
   // post new name and score to fetch API?
   await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/1000/scores/', {
@@ -45,8 +45,8 @@ const displayScores = async () => {
       newScoreLi.className = 'score-board-li';
       scoreBoard.appendChild(newScoreLi);
       newScoreLi.innerHTML = `
-              <p class="score-board-name">${completeResponse.user}:</p>
-              <p class="score-board-score">${completeResponse.score}</p>
+              <p class="score-board-name font">${completeResponse.user}:</p>
+              <p class="score-board-score font">${completeResponse.score}</p>
           `;
     });
   });
