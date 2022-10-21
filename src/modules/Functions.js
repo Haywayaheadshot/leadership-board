@@ -9,7 +9,9 @@ const createScore = async () => {
   const score = scoreInput.value;
   const newScoresInput = new AddScores(name, score);
   newScoresInput.addScore();
+
   const newScoreLi = document.createElement('li');
+
   newScoreLi.className = 'score-board-li';
   scoreBoard.appendChild(newScoreLi);
   newScoreLi.innerHTML = `
@@ -33,6 +35,7 @@ const createScore = async () => {
     .then(() => {
       const createdSuccessfully = document.getElementById('success-message');
       createdSuccessfully.style.display = 'block';
+
       setTimeout(() => {
         createdSuccessfully.style.display = 'none';
       }, 1500);
@@ -45,13 +48,18 @@ const createScore = async () => {
 const displayScores = async () => {
   const spinner = document.getElementById('spinner');
   spinner.classList.replace('spinner-section', 'spinner-section-view');
+
   await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/1000/scores/').then((response) => response.json()).then((completeResponse) => {
     const createdApiScores = completeResponse.result;
     localStorage.setItem('scores', JSON.stringify(createdApiScores));
+
     const scores = new AddScores().getScores();
+
     spinner.classList.replace('spinner-section-view', 'spinner-section');
+
     scores.forEach((completeResponse) => {
       const newScoreLi = document.createElement('li');
+
       newScoreLi.className = 'score-board-li';
       scoreBoard.appendChild(newScoreLi);
       newScoreLi.innerHTML = `
