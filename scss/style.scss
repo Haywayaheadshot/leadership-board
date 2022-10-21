@@ -9,8 +9,54 @@
   font-style: normal;
 }
 
-body {
-  // background-image: linear-gradient(bottom, rgb(254, 133, 107) 24%, rgb(35, 171, 17) 62%);
+// body {
+//   background-image: linear-gradient(bottom, rgb(254, 133, 107) 24%, rgb(35, 171, 17) 62%);
+// }
+
+.success-message-p {
+  background-color: $blue;
+  padding: 10px 15px;
+  color: $white;
+  box-shadow: 0 0 5px $white;
+  display: none;
+}
+
+.spinner-section {
+  display: none;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.spinner-section-view {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.loading-circle {
+  border: 5px solid $blue;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border-top: 5px solid $white;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin: 0;
+  padding-right: 20px;
+  color: $black;
+  font-size: $font-size - 8;
 }
 
 .font {
