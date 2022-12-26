@@ -45,6 +45,12 @@ body {
   animation: spin 0.5s linear infinite;
 }
 
+.score-board-name,
+.score-board-score {
+  width: inherit;
+  display: flex;
+}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -162,6 +168,8 @@ body {
 
 .score-keeper {
   display: grid;
+
+  /* max-width: 60vw; */
 }
 
 .score-keeper-header {
@@ -208,6 +216,7 @@ body {
   border: 3px solid #fff;
   -webkit-box-shadow: 0 0 30px #000;
   box-shadow: 0 0 30px #000;
+  max-width: 90vw;
 }
 
 .score-board-li {
@@ -215,8 +224,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
@@ -224,6 +233,7 @@ body {
   font-weight: 200;
   font-size: 1.5rem;
   color: #000;
+  width: inherit;
 }
 
 .score-board-li:nth-child(odd) {
