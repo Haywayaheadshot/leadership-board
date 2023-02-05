@@ -3,6 +3,8 @@ import AddScores from './Constructor.js';
 const scoreBoard = document.querySelector('.score-board-ul');
 const nameInput = document.querySelector('#name');
 const scoreInput = document.querySelector('#score');
+const apiKey = 'tjbEXnOaXxpySirKIRLc';
+const apiGetPostScore = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${apiKey}/scores/`;
 
 const createScore = async () => {
   const name = nameInput.value;
@@ -19,7 +21,7 @@ const createScore = async () => {
     <p class="score-board-score font">${newScoresInput.score}</p>
     `;
   // post new name and score to fetch API?
-  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/1000/scores/', {
+  await fetch(apiGetPostScore, {
     method: 'post',
     headers: {
       Accept: 'application/json',
@@ -33,7 +35,7 @@ const createScore = async () => {
   })
     .then((response) => response.json())
     .then(() => {
-      const createdSuccessfully = document.getElementById('success-message');
+      const createdSuccessfully = document.querySelector('.success-message-p');
       createdSuccessfully.style.display = 'block';
 
       setTimeout(() => {
@@ -49,7 +51,7 @@ const displayScores = async () => {
   const spinner = document.getElementById('spinner');
   spinner.classList.replace('spinner-section', 'spinner-section-view');
 
-  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/1000/scores/').then((response) => response.json()).then((completeResponse) => {
+  await fetch(apiGetPostScore).then((response) => response.json()).then((completeResponse) => {
     const createdApiScores = completeResponse.result;
     localStorage.setItem('scores', JSON.stringify(createdApiScores));
 
@@ -59,7 +61,6 @@ const displayScores = async () => {
 
     scores.forEach((completeResponse) => {
       const newScoreLi = document.createElement('li');
-
       newScoreLi.className = 'score-board-li';
       scoreBoard.appendChild(newScoreLi);
       newScoreLi.innerHTML = `

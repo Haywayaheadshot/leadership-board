@@ -19,6 +19,9 @@
         <p class="error-message font">
           Please enter a valid name and score. Scores must be just number
         </p>
+        <p class="length-error-message font">
+          Sorry! Your name and score cannot exceed 10 characters!
+        </p>
         <form class="form">
           <label for="name"></label>
           <input
@@ -37,7 +40,7 @@
             placeholder="Your score"
           />
           <div class="add-button-div">
-            <button class="submit-score font" type="submit">Submit</button>
+            <button class="submit-score font" id="submit-score-id" type="submit">Submit</button>
           </div>
         </form>
       </section>
