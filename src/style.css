@@ -6,7 +6,10 @@
 }
 
 body {
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(24%, rgb(254, 133, 107)), color-stop(62%, rgb(35, 171, 17)));
+  background:url(./assets/images/trophy2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
 }
 
 .success-message-p {
@@ -243,6 +246,7 @@ body {
 
 .score-board-li:nth-child(even) {
   color: #fff;
+  background-color: rgba(255, 0, 0, 0.699);
 }
 
 .score-board-score {
