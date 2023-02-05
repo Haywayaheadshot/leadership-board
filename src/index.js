@@ -15,7 +15,7 @@ const checkInput = (event) => {
     errorMessage.style.display = 'block';
     lengthErrorMessage.style.display = 'none';
     return;
-  } 
+  }
   if (nameInput.value.length > 10 || scoreInput.value.length > 10) {
     event.preventDefault();
     errorMessage.style.display = 'none';
